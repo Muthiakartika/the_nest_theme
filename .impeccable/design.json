@@ -1,0 +1,128 @@
+{
+  "northStar": "The Practice Cloth — a child's embroidered sampler, careful and even at the top, loose and confident by the foot, signed by the child who made it. Learning you can see.",
+  "colorRamps": {
+    "forest": {
+      "deep": "#17251D",
+      "base": "#23362C",
+      "mid": "#354C3F",
+      "line": "#43604F"
+    },
+    "cream": {
+      "deep": "#E2D5C4",
+      "base": "#EBE1D5"
+    },
+    "tan": {
+      "ink": "#A78F72",
+      "deep": "#CBB49B",
+      "base": "#DDCAB6"
+    },
+    "paper": {
+      "edge": "#ECE7E0",
+      "base": "#F7F4F0"
+    },
+    "ink": {
+      "base": "#2B2B28",
+      "soft": "rgba(43, 43, 40, 0.72)",
+      "faint": "rgba(43, 43, 40, 0.68)"
+    },
+    "onDark": {
+      "base": "#EBE1D5",
+      "soft": "rgba(235, 225, 213, 0.76)",
+      "faint": "rgba(235, 225, 213, 0.68)"
+    },
+    "thread": {
+      "faint": "rgba(35, 54, 44, 0.17)",
+      "base": "rgba(35, 54, 44, 0.34)",
+      "strong": "rgba(35, 54, 44, 0.55)",
+      "onDark": "rgba(235, 225, 213, 0.34)",
+      "onDarkStrong": "rgba(235, 225, 213, 0.5)"
+    }
+  },
+  "stitch": {
+    "dash": "9px",
+    "gap": "7px",
+    "weight": "1.5px",
+    "note": "One setting drives every rule, frame, divider and underline on the site. Changing it in :root changes all of them together.",
+    "ruleSnippet": "background-image: repeating-linear-gradient(90deg, var(--thread) 0 9px, transparent 9px 16px); background-size: 100% 1.5px; background-repeat: no-repeat;",
+    "frameSnippet": ".stitched draws four running-stitch edges with four repeating-linear-gradients positioned to the four sides. Must be paired with background-color, never the background shorthand."
+  },
+  "elevation": {
+    "philosophy": "Flat. A sampler has no drop shadows — it has stitching, and cloth basted in layers.",
+    "tokens": {
+      "hero-inset": "0 18px 40px -28px rgba(23, 37, 29, 0.6)",
+      "button-primary-hover": "0 4px 14px -6px rgba(23, 37, 29, 0.55)",
+      "header-stuck": "0 6px 22px -18px rgba(23, 37, 29, 0.6)"
+    },
+    "rule": "These three are the only shadows on the site. Do not add a fourth."
+  },
+  "motion": {
+    "ease": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "durations": {
+      "micro": "0.24s",
+      "control": "0.34s",
+      "reveal": "0.7s",
+      "rule": "0.9s"
+    },
+    "stagger": {
+      "stitchIn": "55ms",
+      "motifCell": "42ms"
+    },
+    "authoredMoment": "A section's running-stitch rule draws itself across (scaleX from left) and its motifs land in sequence, like a row being worked. One moment, used once per section.",
+    "gate": ".js class set by an inline script before first paint. Every hidden state is scoped under it, so with no JavaScript all content renders visible and in place.",
+    "reducedMotion": "prefers-reduced-motion: reduce disables all reveal transforms and opacity with !important."
+  },
+  "breakpoints": {
+    "xs": "480px",
+    "sm": "620px",
+    "md": "760px",
+    "lg": "900px",
+    "xl": "1080px",
+    "wide": "1240px",
+    "notes": {
+      "900": "splits and hero grid collapse to one column",
+      "980": "4- and 3-up grids collapse to 2",
+      "620": "all grids collapse to 1",
+      "1080": "desktop nav swaps for the menu panel",
+      "640": "motif bands drop past the 7th mark"
+    }
+  },
+  "typographyRoles": {
+    "Lora": "Every heading, editorial statement and emotional line. Italic reserved for pull quotes, the footer signature, and program band notes.",
+    "Poppins": "Body, navigation, buttons, labels, forms, ages, hours, ratios, all practical information.",
+    "rule": "Two families only. No third face, ever."
+  },
+  "componentSnippets": {
+    "stitch-rule": "<div class=\"rule\" aria-hidden=\"true\"></div>",
+    "chip": "<span class=\"chip\">1 : 3 RATIO</span>",
+    "button-stitch": "<a class=\"btn btn--stitch stitched\" href=\"#\"><span>Explore Programs</span></a>",
+    "image-placeholder": "<figure class=\"patch stitched\"><span class=\"patch__chart\"></span><span class=\"patch__mark\">…motif…</span><figcaption class=\"patch__caption\"><span class=\"patch__badge\">Hero image</span><p class=\"patch__text\">…the photographer's brief…</p></figcaption></figure>"
+  },
+  "rules": [
+    "Gold Tan #DDCAB6 is 1.2:1 on Warm Cream — it may fill, but it may never draw a line or carry text on a light ground. Use tan-ink #A78F72 to draw.",
+    "No text eyebrow above a heading. A motif opens the section; the heading carries itself.",
+    "Never two identical grounds adjacent.",
+    "Anything carrying .stitched must use background-color, not the background shorthand.",
+    "One drawn alphabet. No emoji, no icon library.",
+    "The nest motif is used sparingly — four places across the whole site.",
+    "--ink-faint is the floor for small text, not a lighter grey.",
+    "Card grids are never a page's structure; use a worked list.",
+    "Sections nest no more than two containers deep, so the design is rebuildable in Elementor."
+  ],
+  "antiReferences": [
+    "The pastel-blob card grid the early-learning category ships by default.",
+    "Austere cream editorial minimalism — the predictable opposite.",
+    "Gradients, glassmorphism, floating card stacks, rounded-rectangle everything.",
+    "The Hero → Cards → Cards → CTA skeleton."
+  ],
+  "pendingClientContent": [
+    "Fee figures — data/rates.js, RATES_CONFIRMED=false gates the 'indicative only' notice",
+    "All photography — every ImagePlaceholder caption is its shot brief",
+    "Parent testimonials — home page families section",
+    "Privacy Policy and Terms of Use legal copy",
+    "Three FAQ answers flagged `pending` in data/faqs.js",
+    "WhatsApp number, phone, street address — data/site.js TODO stubs",
+    "Handbook and Safety Policy PDFs",
+    "Booking scheduler and Google Maps embeds — contact page slots",
+    "Form POST endpoints for EnrollmentForm and TourForm"
+  ]
+}

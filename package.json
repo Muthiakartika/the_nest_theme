@@ -1,0 +1,23 @@
+{
+  "name": "thenest-daycare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Nest Daycare — Umalas, Bali. Next.js front-end.",
+  "scripts": {
+    "dev": "next dev -p 3210",
+    "build": "next build",
+    "start": "next start -p 3210",
+    "preview": "node scripts/preview.mjs 3212",
+    "shots": "node scripts/shoot.mjs http://localhost:3212",
+    "pdf": "node scripts/pdf.mjs http://localhost:3212",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.5.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.9.0"
+  }
+}

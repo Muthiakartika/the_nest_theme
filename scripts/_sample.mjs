@@ -1,0 +1,15 @@
+import sharp from "sharp";
+const file = process.argv[2];
+const [L,T,W,H] = process.argv.slice(3,7).map(Number);
+const { data, info } = await sharp(file).extract({left:L,top:T,width:W,height:H}).raw().toBuffer({resolveWithObject:true});
+const ch = info.channels;
+const lum = (r,g,b)=>{const f=c=>{c/=255;return c<=0.04045?c/12.92:Math.pow((c+0.055)/1.055,2.4)};return 0.2126*f(r)+0.7152*f(g)+0.0722*f(b)};
+const px=[];
+for(let i=0;i<data.length;i+=ch) px.push([data[i],data[i+1],data[i+2]]);
+px.sort((a,b)=>lum(...a)-lum(...b));
+const darkest = px[0];
+const p2 = px[Math.floor(px.length*0.02)];
+const bg = px[Math.floor(px.length*0.90)];
+const cr=(a,b)=>{const l1=Math.max(lum(...a),lum(...b)),l2=Math.min(lum(...a),lum(...b));return ((l1+0.05)/(l2+0.05)).toFixed(2)};
+const hex=a=>'#'+a.map(v=>v.toString(16).padStart(2,'0')).join('');
+console.log(`${(process.argv[7]||'').padEnd(34)} core=${hex(darkest)} bg=${hex(bg)}  CR=${cr(darkest,bg)}`);
